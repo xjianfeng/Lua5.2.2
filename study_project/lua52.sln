@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lua52", "lua52\lua52.vcxproj", "{12518F34-111A-4A02-9F89-954548D903AE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{12518F34-111A-4A02-9F89-954548D903AE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{12518F34-111A-4A02-9F89-954548D903AE}.Debug|Win32.Build.0 = Debug|Win32
+		{12518F34-111A-4A02-9F89-954548D903AE}.Release|Win32.ActiveCfg = Release|Win32
+		{12518F34-111A-4A02-9F89-954548D903AE}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
