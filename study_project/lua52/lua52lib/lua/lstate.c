@@ -258,7 +258,7 @@ void luaE_freethread (lua_State *L, lua_State *L1) {
   luaM_free(L, l);
 }
 
-
+//通过lua_newstate创建一个新的界畵畡虚拟机时，第一块申请的内存将用来保存主线程和这个全局状态机。
 LUA_API lua_State *lua_newstate (lua_Alloc f, void *ud) {
   int i;
   lua_State *L;
