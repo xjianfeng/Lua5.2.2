@@ -539,7 +539,7 @@ typedef union Closure {
 
 
 /*
-** Tables
+** Tables 数组和哈希是分开存放的
 */
 
 typedef union TKey {
@@ -562,11 +562,11 @@ typedef struct Table {
   lu_byte flags;  /* 1<<p means tagmethod(p) is not present */
   lu_byte lsizenode;  /* log2 of size of `node' array */
   struct Table *metatable;
-  TValue *array;  /* array part */
-  Node *node;
+  TValue *array;  /* array part 存放数组*/
+  Node *node;	  /* 存放哈希 */
   Node *lastfree;  /* any free position is before this position */
   GCObject *gclist;
-  int sizearray;  /* size of `array' array */
+  int sizearray;  /* size of `array' array 数组长度信息*/
 } Table;
 
 
