@@ -140,6 +140,9 @@ static int arrayindex (const TValue *key) {
 ** returns the index of a `key' for table traversals. First goes all
 ** elements in the array part, then elements in the hash part. The
 ** beginning of a traversal is signaled by -1.
+**一旦在迭代过程中发生垃圾收集，对键值赋值为空的操作就有可能导致垃圾收集过程中把这个键值对标
+**记为死键。所以，在 next 操作中，从上一个键定位下一个键时，需要支持检索一个死键，查询这个死键的
+**下一个键位
 */
 static int findindex (lua_State *L, Table *t, StkId key) {
   int i;
@@ -165,7 +168,7 @@ static int findindex (lua_State *L, Table *t, StkId key) {
   }
 }
 
-
+//table 传入上一个键，返回下一个键值对 
 int luaH_next (lua_State *L, Table *t, StkId key) {
   int i = findindex(L, t, key);  /* find original element */
   for (i++; i < t->sizearray; i++) {  /* try first array part */
